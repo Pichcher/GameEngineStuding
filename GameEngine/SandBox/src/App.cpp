@@ -1,7 +1,14 @@
-namespace GameEngine {
-	__declspec(dllimport) void Print();
-}
-void main()
-{
-	GameEngine::Print();
+#include <GameEngine.h>
+
+class SandBox : public GameEngine::Application {
+public:
+	SandBox() {
+
+	}
+	~SandBox() {
+
+	}
+};
+GameEngine::Application* GameEngine::CreateApplication() {
+	return new SandBox();
 }
